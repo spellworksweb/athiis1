@@ -1,68 +1,114 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // To detect route changes
+
+  useEffect(() => {
+    // Close the dropdown when the route changes
+    setMenuOpen(false);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.nav
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  className={`fixed w-full z-50 transition-all duration-500 px-4 ${
-    scrolled 
-      ? 'bg-white/30 backdrop-blur-lg shadow-lg border border-white/20'
-      : 'bg-white/10 backdrop-blur-md border border-white/10'
-  }`}
->
-      <div className="flex justify-between h-16 px-4">
-        <motion.div
-          className="flex items-center"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          
-      <img src="/logo.png" alt="Company Logo" className="h-8 w-10" />
-      <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#96C93C] to-green-600 text-transparent bg-clip-text">
-  ATHIS CORP
-</span>
-        </motion.div>
-        <div className="flex items-center space-x-8">
-        
-        {['home', 'about', 'clients', 'services'].map((item) => (
-  <motion.a
-    key={item}
-    href={`#${item}`}
-    className="relative group capitalize"
-    whileHover={{ y: -3, scale: 1.05 }}
-    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-  >
-    <span>{item === 'home' ? 'Home' : item === 'clients' ? 'Our Clients' : 
-      item === 'contact' ? 'Contact Us' : item === 'services' ? 'Services' : 'About Us'}
-    </span>
-    <span className="absolute left-1/2 -bottom-1 w-0 h-0.5 bg-[#90EE90] transition-all duration-300 ease-out group-hover:w-full group-hover:left-0" />
-  </motion.a>
-))}
-<motion.a
-  href="#contact"
-  className="px-6 py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-[#96C93C] to-green-600 shadow-lg shadow-[#96C93C]/50 hover:shadow-green-700/50 transition-all duration-300"
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 border-b shadow-lg ${
+        isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
+      }`}
+    >
+      <div className="flex flex-wrap items-center justify-between px-4 md:px-8 lg:px-16 xl:px-20 py-4">
+        {/* Logo */}
+        <RouterLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/logo.png" className="h-8" alt="Athis Corp" />
+          <span className="self-center text-lg md:text-xl font-bold whitespace-nowrap text-green-500">
+            ATHIS CORP ENERGY & SOLUTION
+          </span>
+        </RouterLink>
 
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}
->
-  Contact Us
-</motion.a> 
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-green-500 rounded-lg md:hidden hover:bg-green-500 hover:text-white focus:outline-none transition duration-300"
+          aria-controls="navbar-dropdown"
+          aria-expanded={menuOpen}
+        >
+          <span className="sr-only">Open main menu</span>
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+
+        {/* Nav Items */}
+        <div
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } absolute top-full right-4 w-48 md:static md:block md:w-auto transition-all duration-300`}
+          id="navbar-dropdown"
+        >
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:mt-0 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:border-0 md:bg-transparent">
+            <li>
+              <RouterLink
+                to="/"
+                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
+                onClick={() => setMenuOpen(false)} // Close dropdown on click
+              >
+                Home
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
+                to="/about"
+                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
+                onClick={() => setMenuOpen(false)} // Close dropdown on click
+              >
+                About
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
+                to="/services"
+                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
+                onClick={() => setMenuOpen(false)} // Close dropdown on click
+              >
+                Services
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
+                to="/clients"
+                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
+                onClick={() => setMenuOpen(false)} // Close dropdown on click
+              >
+                Clients
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
+                to="/contact"
+                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
+                onClick={() => setMenuOpen(false)} // Close dropdown on click
+              >
+                Contact
+              </RouterLink>
+            </li>
+          </ul>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
