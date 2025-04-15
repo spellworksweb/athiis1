@@ -693,109 +693,111 @@ const Services = () => {
 
       {/* Main Content */}
       <main className="w-full md:w-3/4 p-6">
-        {!selectedCategory ? (
+  {!selectedCategory ? (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="space-y-8"
+    >
+      <h1 className="text-4xl font-bold text-green-700 mb-6">Our Services</h1>
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
+        With over <span className="font-semibold text-green-600">12+ years</span> of expertise in the heavy equipment industry, we take immense pride in offering a wide spectrum of power solutions through top-of-the-line diesel generators. We are committed to excellence in every aspect—from product quality and service efficiency to pricing and long-term customer relationships.
+      </p>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
+        Our journey began with a simple mission: <span className="italic text-green-600">to power progress</span>. Today, we are a trusted name across <span className="font-semibold">Tamil Nadu, Karnataka, and Andhra Pradesh</span>, known for our reliable generators, technical know-how, and customer-first approach.
+      </p>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
+        We are authorized dealers and service providers for premium generator brands including:
+      </p>
+      
+      <ul className="space-y-2 pl-6 list-disc text-gray-800">
+        <li><span className="text-green-600 font-medium">Kirloskar Generators:</span> Known for durability, fuel efficiency, and high performance across all environments.</li>
+        <li><span className="text-green-600 font-medium">Ashok Leyland Generators:</span> Robust, rugged, and perfect for medium to heavy-duty applications.</li>
+        <li><span className="text-green-600 font-medium">Mahindra Generators:</span> Compact, eco-friendly, and value-driven diesel solutions.</li>
+        <li><span className="text-green-600 font-medium">Cummins Generators:</span> Renowned globally for critical operations requiring efficiency and power.</li>
+        <li><span className="text-green-600 font-medium">Eicher Generators:</span> Reliable and cost-effective, suitable for a wide range of applications.</li>
+      </ul>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
+        Our services go beyond just selling. We provide:
+      </p>
+      
+      <ul className="space-y-2 pl-6 list-disc text-gray-800">
+        <li><strong className="text-green-600">Installation & Commissioning:</strong> Safe, tested setups ready to perform.</li>
+        <li><strong className="text-green-600">Preventive Maintenance:</strong> Avoid breakdowns and increase lifespan with routine care.</li>
+        <li><strong className="text-green-600">Repairs & Emergency Service:</strong> Quick and efficient fault diagnosis and solutions.</li>
+        <li><strong className="text-green-600">Genuine Spare Parts:</strong> Original components for performance and compliance.</li>
+        <li><strong className="text-green-600">AMC (Annual Maintenance Contracts):</strong> Priority support and regular check-ups for peace of mind.</li>
+      </ul>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
+        Why customers trust us:
+      </p>
+      
+      <ul className="space-y-2 pl-6 list-disc text-gray-800">
+        <li><strong className="text-green-600">Unmatched Experience:</strong> Over a decade of industry presence.</li>
+        <li><strong className="text-green-600">Reliable Team:</strong> Skilled professionals focused on service excellence.</li>
+        <li><strong className="text-green-600">Customer-Centric Philosophy:</strong> Partnership over transactions.</li>
+        <li><strong className="text-green-600">Competitive Pricing:</strong> Value-driven pricing built for long-term gain.</li>
+        <li><strong className="text-green-600">Positive Reputation:</strong> Testimonials that speak for our dedication.</li>
+        <li><strong className="text-green-600">Wide Service Network:</strong> Fast support across multiple states.</li>
+        <li><strong className="text-green-600">Tailored Solutions:</strong> Custom setups for small to large power needs.</li>
+      </ul>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
+        From factories and hospitals to schools, apartments, IT parks, retail stores, and construction sites, our generators help power lives and businesses. Because for us, electricity is not just a luxury—it's a necessity.
+      </p>
+      
+      <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
+        Whether you're upgrading, starting fresh, or need urgent help—our team is here to support you from selection to setup.
+      </p>
+      
+      <div className="mt-6">
+        <p className="text-xl font-semibold text-green-700 mb-2">Let’s Work Together</p>
+        <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
+          We’re more than a vendor—we’re your power partner. Contact us today for a <span className="text-green-600 font-medium">free consultation or site visit</span>. Your power needs are our top priority.
+        </p>
+      </div>
+    </motion.div>
+
+  ) : (
+    <>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="text-3xl font-bold text-green-600 mb-6"
+      >
+        {selectedCategory}
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            key={service.id}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <h1 className="text-4xl font-bold text-green-700 mb-4">Our Services</h1>
-            <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
-            With over <span className="font-semibold text-green-600">12+ years</span> of expertise in the heavy equipment industry, we take immense pride in offering a wide spectrum of power solutions through top-of-the-line diesel generators. We are committed to excellence in every aspect—from product quality and service efficiency to pricing and long-term customer relationships.
-          </p>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
-            Our journey began with a simple mission: <span className="italic text-green-600">to power progress</span>. Today, we are a trusted name across <span className="font-semibold">Tamil Nadu, Karnataka, and Andhra Pradesh</span>, known for our reliable generators, technical know-how, and customer-first approach.
-          </p>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
-            We are authorized dealers and service providers for premium generator brands including:
-          </p>
-        
-          <ul className="space-y-2 pl-6 list-disc text-gray-800">
-            <li><span className="text-green-600 font-medium">Kirloskar Generators:</span> Known for durability, fuel efficiency, and high performance across all environments.</li>
-            <li><span className="text-green-600 font-medium">Ashok Leyland Generators:</span> Robust, rugged, and perfect for medium to heavy-duty applications.</li>
-            <li><span className="text-green-600 font-medium">Mahindra Generators:</span> Compact, eco-friendly, and value-driven diesel solutions.</li>
-            <li><span className="text-green-600 font-medium">Cummins Generators:</span> Renowned globally for critical operations requiring efficiency and power.</li>
-            <li><span className="text-green-600 font-medium">Eicher Generators:</span> Reliable and cost-effective, suitable for a wide range of applications.</li>
-          </ul>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
-            Our services go beyond just selling. We provide:
-          </p>
-        
-          <ul className="space-y-2 pl-6 list-disc text-gray-800">
-            <li><strong className="text-green-600">Installation & Commissioning:</strong> Safe, tested setups ready to perform.</li>
-            <li><strong className="text-green-600">Preventive Maintenance:</strong> Avoid breakdowns and increase lifespan with routine care.</li>
-            <li><strong className="text-green-600">Repairs & Emergency Service:</strong> Quick and efficient fault diagnosis and solutions.</li>
-            <li><strong className="text-green-600">Genuine Spare Parts:</strong> Original components for performance and compliance.</li>
-            <li><strong className="text-green-600">AMC (Annual Maintenance Contracts):</strong> Priority support and regular check-ups for peace of mind.</li>
-          </ul>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
-            Why customers trust us:
-          </p>
-        
-          <ul className="space-y-2 pl-6 list-disc text-gray-800">
-            <li><strong className="text-green-600">Unmatched Experience:</strong> Over a decade of industry presence.</li>
-            <li><strong className="text-green-600">Reliable Team:</strong> Skilled professionals focused on service excellence.</li>
-            <li><strong className="text-green-600">Customer-Centric Philosophy:</strong> Partnership over transactions.</li>
-            <li><strong className="text-green-600">Competitive Pricing:</strong> Value-driven pricing built for long-term gain.</li>
-            <li><strong className="text-green-600">Positive Reputation:</strong> Testimonials that speak for our dedication.</li>
-            <li><strong className="text-green-600">Wide Service Network:</strong> Fast support across multiple states.</li>
-            <li><strong className="text-green-600">Tailored Solutions:</strong> Custom setups for small to large power needs.</li>
-          </ul>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300 pt-2">
-            From factories and hospitals to schools, apartments, IT parks, retail stores, and construction sites, our generators help power lives and businesses. Because for us, electricity is not just a luxury—it's a necessity.
-          </p>
-        
-          <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
-            Whether you're upgrading, starting fresh, or need urgent help—our team is here to support you from selection to setup.
-          </p>
-        
-          <div className="mt-6">
-            <p className="text-xl font-semibold text-green-700 mb-2">Let’s Work Together</p>
-            <p className="text-lg text-gray-700 leading-relaxed hover:translate-x-1 transition-transform duration-300">
-              We’re more than a vendor—we’re your power partner. Contact us today for a <span className="text-green-600 font-medium">free consultation or site visit</span>. Your power needs are our top priority.
-            </p>
-          </div>
-          </motion.div>
-
-        ) : (
-          <>
-            <motion.h2
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="text-3xl font-bold text-green-600 mb-6"
+            <img src={service.image} alt={service.name} className="w-full h-40 object-cover rounded-md mb-4" />
+            <h3 className="text-xl font-bold text-green-600">{service.name}</h3>
+            <p className="text-gray-700 mt-2">{service.description}</p>
+            <button
+              onClick={() => navigate(`/servicedetail/${service.id}`)}
+              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-all"
             >
-              {selectedCategory}
-            </motion.h2>
+              View Details
+            </button>
+          </motion.div>
+        ))}
+      </div>
+    </>
+  )}
+</main>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <motion.div
-                  key={service.id}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                  <img src={service.image} alt={service.name} className="w-full h-40 object-cover rounded-md" />
-                  <h3 className="text-xl font-bold text-green-600 mt-4">{service.name}</h3>
-                  <p className="text-gray-700 mt-1">{service.description}</p>
-                  <button
-                    onClick={() => navigate(`/servicedetail/${service.id}`)}
-                    className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-all"
-                  >
-                    View Details
-                  </button>
-                </motion.div>
-              ))}
-            </div>
-          </>
-        )}
-      </main>
     </div>
   );
 };

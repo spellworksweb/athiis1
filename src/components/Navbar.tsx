@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -14,11 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,13 +27,17 @@ const Navbar = () => {
         isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
       }`}
     >
-      <div className="flex flex-wrap items-center justify-between px-4 md:px-8 lg:px-16 xl:px-20 py-4">
+      <div className="flex flex-wrap items-center justify-between  w-full py-4">
         {/* Logo */}
         <RouterLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/logo.png" className="h-8" alt="Athis Corp" />
-          <span className="self-center text-lg md:text-xl font-bold whitespace-nowrap text-green-500">
-            ATHIS CORP ENERGY & SOLUTION
-          </span>
+          <img src="/logo.png" className="h-12 w-15" alt="Athis Corp" />
+          <div className="flex flex-col items-start">
+            <img
+              src="/logoimg1.png" // Replace with your actual logo path
+              alt="Athis Corp Logo"
+              className="h-10 w-auto"
+            />
+          </div>
         </RouterLink>
 
         {/* Mobile Toggle */}
@@ -56,55 +56,31 @@ const Navbar = () => {
         <div
           className={`${
             menuOpen ? "block" : "hidden"
-          } absolute top-full right-4 w-48 md:static md:block md:w-auto transition-all duration-300`}
+          } absolute top-full right-4 w-64 md:static md:block md:w-auto transition-all duration-300`}
           id="navbar-dropdown"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:mt-0 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:border-0 md:bg-transparent">
-            <li>
-              <RouterLink
-                to="/"
-                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
-                onClick={() => setMenuOpen(false)} // Close dropdown on click
-              >
-                Home
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/about"
-                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
-                onClick={() => setMenuOpen(false)} // Close dropdown on click
-              >
-                About
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/services"
-                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
-                onClick={() => setMenuOpen(false)} // Close dropdown on click
-              >
-                Services
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/clients"
-                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
-                onClick={() => setMenuOpen(false)} // Close dropdown on click
-              >
-                Clients
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/contact"
-                className="block py-2 px-3 text-green-500 rounded-sm hover:bg-green-500 hover:text-white md:hover:bg-transparent md:hover:text-green-700 md:p-0 transition-all duration-300"
-                onClick={() => setMenuOpen(false)} // Close dropdown on click
-              >
-                Contact
-              </RouterLink>
-            </li>
+          <ul className="flex flex-col md:flex-row gap-2 md:gap-x-3 p-4 md:p-0 mt-4 md:mt-0 rounded-lg bg-gray-100 md:bg-transparent">
+            {[
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Services", path: "/services" },
+              { name: "Clients", path: "/clients" },
+              { name: "Contact", path: "/contact" },
+            ].map((link, index) => (
+              <li key={index}>
+                <RouterLink
+                  to={link.path}
+                  className={`py-2.5 px-4 inline-flex items-center gap-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? "bg-gradient-to-r from-green-500 to-green-600 text-gray-800"
+                      : "bg-transparent text-gray-500 hover:text-green-600"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.name}
+                </RouterLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

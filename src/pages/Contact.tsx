@@ -60,10 +60,16 @@ const Contact = () => {
         <img
           src="/img/contact.jpeg"
           alt="City"
-          className="w-full h-[200px] md:h-[300px] lg:h-[400px] object-cover"
+          className="w-full h-[200px] md:h-[300px] lg:h-[300px] object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-6 md:px-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight">
+      Contact Us
+    </h2>
+    <p className="text-sm md:text-base lg:text-lg mt-4 max-w-2xl text-center">
+      At <span className="font-semibold">Athis Corp</span>,we value every opportunity to connect. Our commitment to excellence and innovation extends to every conversation—let’s start one today.
+    </p>
         </div>
       </div>
 
@@ -135,7 +141,7 @@ const Contact = () => {
                     ? "bg-green-500"
                     : submitStatus === "error"
                     ? "bg-red-500"
-                    : "bg-green-600 hover:bg-[#7FDD7F] active:bg-[#6ECC6E]"
+                    : "bg-gradient-to-r from-green-500 to-green-600 hover:bg-[#7FDD7F] active:bg-[#6ECC6E]"
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { FaTools, FaBolt, FaCogs, FaUsers, FaHandshake, FaAward, FaLightbulb, FaShieldAlt } from "react-icons/fa";
+import { FaBolt, FaCogs, FaHandshake, FaTools, FaUsers } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div id="about" className="bg-white pt-16 pb-16 w-full">
-      <div className="w-full px-8">
+    <div id="about" className="relative bg-white pt-16 pb-16 w-full">
+  
+
+      <div className="w-full px-8 relative z-10">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +41,7 @@ const About = () => {
               <FaUsers className="text-green-500 text-5xl mb-4" />
               <h4 className="text-xl font-semibold mb-2">Customer Focus</h4>
               <p className="text-gray-600">
-          We prioritize our customers' needs and work tirelessly to exceed their expectations.
+                We prioritize our customers' needs and work tirelessly to exceed their expectations.
               </p>
             </motion.div>
             <motion.div
@@ -52,7 +54,7 @@ const About = () => {
               <FaHandshake className="text-green-500 text-5xl mb-4" />
               <h4 className="text-xl font-semibold mb-2">Integrity</h4>
               <p className="text-gray-600">
-          Honesty and transparency are at the heart of everything we do.
+                Honesty and transparency are at the heart of everything we do.
               </p>
             </motion.div>
             <motion.div
@@ -65,40 +67,48 @@ const About = () => {
               <FaCogs className="text-green-500 text-5xl mb-4" />
               <h4 className="text-xl font-semibold mb-2">Innovation</h4>
               <p className="text-gray-600">
-          We embrace creativity and cutting-edge technology to deliver exceptional solutions.
+                We embrace creativity and cutting-edge technology to deliver exceptional solutions.
               </p>
             </motion.div>
           </div>
         </motion.div>
-        {/* Our Mission Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-            Our mission is to empower businesses with sustainable and efficient power solutions. We strive to provide innovative, high-quality, and customer-focused services that ensure uninterrupted operations and long-term success for our clients.
-          </p>
-        </motion.div>
 
-        {/* Our Vision Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-            To be a global leader in power and fabrication solutions, recognized for our commitment to innovation, sustainability, and excellence. We envision a future where businesses thrive with reliable and eco-friendly energy solutions tailored to their unique needs.
-          </p>
-        </motion.div>
+        {/* Our Mission and Vision Section */}
+        <motion.div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+  {/* Mission */}
+  <motion.div
+    className="relative group p-6 bg-green-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 border border-green-200"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    whileHover={{ scale: 1.05 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    <h3 className="text-3xl font-bold text-green-600 mb-4">Our Mission</h3>
+    <p className="text-lg text-gray-700 leading-relaxed font-light">
+      Our mission is to empower businesses with sustainable and efficient power solutions. We strive to provide innovative, high-quality, and customer-focused services that ensure uninterrupted operations and long-term success for our clients.
+    </p>
+    {/* Gradient hover effect */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-green-100 opacity-0 group-hover:opacity-20 transition-all duration-500 rounded-xl"></div>
+  </motion.div>
 
-        
+  {/* Vision */}
+  <motion.div
+    className="relative group p-6 bg-green-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 border border-green-200"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    whileHover={{ scale: 1.05 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.2 }}
+  >
+    <h3 className="text-3xl font-bold text-green-600 mb-4">Our Vision</h3>
+    <p className="text-lg text-gray-700 leading-relaxed font-light">
+      To be a global leader in power and fabrication solutions, recognized for our commitment to innovation, sustainability, and excellence. We envision a future where businesses thrive with reliable and eco-friendly energy solutions tailored to their unique needs.
+    </p>
+    {/* Gradient hover effect */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-green-100 opacity-0 group-hover:opacity-20 transition-all duration-500 rounded-xl"></div>
+  </motion.div>
+</motion.div>
 
         {/* Our Expertise Section */}
         <div className="grid md:grid-cols-2 gap-12 items-stretch mt-16">
@@ -148,8 +158,6 @@ const About = () => {
             ></iframe>
           </motion.div>
         </div>
-
-        
       </div>
     </div>
   );

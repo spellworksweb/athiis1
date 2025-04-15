@@ -20,24 +20,27 @@ const ClientsPage: React.FC = () => {
     <div className="pt-16 bg-gray-100 min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full">
-        <img
-          src="/img/client.jpeg"
-          alt="City"
-          className="w-full h-[200px] md:h-[300px] lg:h-[400px] object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 opacity-80"></div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight">
-            Our Clients
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg mt-4 max-w-2xl text-center">
-            At <span className="font-semibold">Athis Corp</span>, we are proud
-            to partner with some of the most innovative and trusted companies
-            worldwide. Our commitment to excellence and innovation drives us to
-            deliver exceptional value to our clients.
-          </p>
-        </div>
-      </div>
+  <img
+    src="/img/client.jpeg"
+    alt="City"
+    className="w-full h-[200px] md:h-[300px] lg:h-[300px] object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 "></div>
+  <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-4 md:px-4">
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight">
+      Our Clients
+    </h2>
+    <p className="text-sm md:text-base lg:text-lg mt-4 max-w-2xl text-center">
+      At <span className="font-semibold">Athis Corp</span>, we are proud
+      to partner with some of the most innovative and trusted companies
+      worldwide. Our commitment to excellence and innovation drives us to
+      deliver exceptional value to our clients.
+    </p>
+  </div>
+</div>
+
+
+
 
       {/* Client Description */}
       <div className="w-full text-center mt-12 px-4 md:px-8 lg:px-16 xl:px-20 py-4">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { MessageCircle, Pause, Play, Volume2, VolumeX,PhoneCall } from "lucide-react";
 import { useRef, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -41,6 +41,7 @@ const Home = () => {
     <div id="home" className="pt-16 relative">
       {/* Hero Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      
         {/* small Featured Image */}
         <div className="relative">
           <img
@@ -49,7 +50,7 @@ const Home = () => {
             className="w-full h-[400px] object-cover "
           />
           <div className="absolute bottom-0 left-0 text-white p-4 w-full">
-            <h2 className="text-lg font-bold">Over 1904.1 Million kWh of Clean Energy</h2>
+            <h2 className="text-lg font-bold">Over Million kWh of Clean Energy</h2>
           </div>
         </div>
 
@@ -135,8 +136,15 @@ const Home = () => {
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-green-500 text-white p-2 md:p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
         aria-label="Contact on WhatsApp"
       >
-        <MessageCircle size={20} />
+        <MessageCircle size={30} />
       </a>
+      <a
+  href="tel:9840000529"
+  className="fixed bottom-20 right-4 md:bottom-24 md:right-6 bg-green-600 text-white p-2 md:p-4 rounded-full shadow-lg hover:bg-green-700 transition-colors z-50"
+  aria-label="Call Us"
+>
+  <PhoneCall size={30} />
+</a>
 
       {/* Why Choose Athis Corp Section */}
       <section id="why-athis" className="pt-10 bg-white text-green-700 py-16 px-6 md:px-16">
