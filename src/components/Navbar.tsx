@@ -30,15 +30,20 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between  w-full py-4">
         {/* Logo */}
         <RouterLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/logo.png" className="h-12 w-15" alt="Athis Corp" />
-          <div className="flex flex-col items-start">
-            <img
-              src="/logoimg1.png" // Replace with your actual logo path
-              alt="Athis Corp Logo"
-              className="h-10 w-auto"
-            />
-          </div>
-        </RouterLink>
+  <img 
+    src="/logo.png" 
+    className="h-12 w-15 transition-transform duration-300 ease-in-out hover:scale-110" 
+    alt="Athis Corp" 
+  />
+  <div className="flex flex-col items-start">
+    <img
+      src="/name.png"
+      alt="Athis Corp Logo"
+      className="h-10 w-auto animate-zoom-in-out"
+    />
+  </div>
+</RouterLink>
+
 
         {/* Mobile Toggle */}
         <button

@@ -68,7 +68,7 @@ export const serviceCategories = [
       {
         id: 5,
         name: "25 - 35 kVA Generator (1 Phase)",
-        image: "/generators/img3.webp",
+        image: "/generators/25-35.jpg",
         description: "Heavy-duty power for larger needs with 1-phase output.",
         specs: ["Capacity: 25 - 35 kVA", "Output: 20 - 32 kWe", "Prime Rated"],
         details: `High-performance single-phase diesel generator tailored for residential, small business, and rural applications, combining quiet operation with durability and fuel efficiency.`,
@@ -96,7 +96,7 @@ export const serviceCategories = [
       {
         id: 6,
         name: "40 - 50 kVA Generator (3 Phase)",
-        image: "/generators/img4.jpg",
+        image: "/generators/40-50.jpg",
         description: "Robust performance and efficient energy use.",
         specs: ["Capacity: 40 - 50 kVA", "Output: 32.8 - 40 kWe", "Prime Rated"],
         details: `Cummins® X3.6 Series gensets are known for rugged durability and powerful performance. Built for industrial-grade reliability and superior emission compliance.`,
@@ -125,7 +125,7 @@ export const serviceCategories = [
       {
         id: 7,
         name: "50 - 58.5 kVA Generator",
-        image: "/generators/img5.webp",
+        image: "/generators/50-58.jpg",
         description: "Medium capacity for small industries and offices.",
         specs: ["Capacity: 50 - 58.5 kVA",
            "Output: 40 - 47 kWe",
@@ -159,19 +159,19 @@ export const serviceCategories = [
       {
         id: 8,
         name: "82.5 - 140 kVA Generator",
-        image: "/generators/img6.webp",
+        image: "/generators/img8.webp",
         description: "High-capacity solution for mid-size to large operations.",
         specs: [
           "Output Range: 82.5 – 140 kVA",
-          "Engine: Ashok Leyland 6DTI/HA494TIC",
+          
           "Voltage: 415V, 3 Phase",
           "Alternator: Brushless with AVR",
           "Cooling System: Liquid cooled",
           "Fuel Tank: 180 L"
         ],
         details: `High-capacity diesel generator for mission-critical operations. Designed for continuous duty with reliability and advanced controls.`,
-        about: "Powered by the Ashok Leyland 6-cylinder inline engine, this genset ensures stable power delivery, excellent load acceptance, and extended durability. Ideal for industrial installations and infrastructure hubs.",
-  benefits: [
+        about: "Powered by the Cummins 6-cylinder inline engine, this genset delivers reliable power output, superior load handling, and long-lasting performance. Perfectly suited for industrial operations and critical infrastructure applications.",
+        benefits: [
     "Handles sudden load changes smoothly",
     "Ideal for prime or standby applications",
     "Comes with integrated safety features",
@@ -192,7 +192,7 @@ export const serviceCategories = [
       {
         id: 9,
         name: "160 - 250 kVA Generator",
-        image: "/generators/img7.jpg",
+        image: "/generators/160-250.jpg",
         description: "Powerful backup for high-demand operations.",
         specs: [
           "Power Rating: 160 to 250 kVA (128 to 200 kWe)",
@@ -230,6 +230,45 @@ export const serviceCategories = [
       },
       {
         id: 10,
+        name: "320 kVA Generator",
+        image: "/generators/img10.jpeg",
+        description: "Industrial grade generator with strong reliability.",
+        specs: [
+          "Power Rating: 320 kVA (256 kWe)",
+          "Voltage: 415V, 50 Hz | 3 Phase",
+          "Engine: Cummins QSL9 – 6 Cylinder, Inline, 4-Stroke",
+          "Alternator: Stamford HCI444D, Brushless",
+          "Cooling: Liquid Cooled Radiator System",
+          "Aspiration: Turbocharged & Charge Air Cooled",
+          "Fuel: High-Speed Diesel with AUS32 (DEF)",
+          "Noise Level: ≤ 75 dBA @ 1m at 75% load"
+        ],
+        details: `The Cummins QSK19 Series 650–750 kVA diesel generator delivers high-capacity, CPCB IV+ compliant power with robust efficiency and reliability. Ideal for critical operations, it features a turbocharged engine, brushless alternator, and integrated fuel and DEF systems. Backed by Cummins’ single-source support and a comprehensive warranty for peace of mind.`,
+        about: "The Cummins QSL9 Series generator is a robust solution featuring an advanced electronic fuel system and high-output Stamford alternator. Designed for continuous operation under demanding conditions, this 6-cylinder unit integrates all core components from Cummins to ensure power consistency and serviceability.",
+  benefits: [
+    "Meets CPCB IV+ norms with exhaust after-treatment",
+    "Compact size with superior power-to-weight ratio",
+    "500 hours/1-year service interval",
+    "Reliable single-source package from Cummins",
+    "Proven efficiency and fuel economy"
+  ],
+  useCases: [
+    "Commercial and residential complexes",
+    "Light industrial units",
+    "Healthcare and labs",
+    "Institutional campuses",
+    "Urban infrastructure projects"
+  ],
+  included: [
+    "Hospital-grade silencer",
+    "Weatherproof acoustic enclosure",
+    "Remote monitoring support",
+    "Fuel and DEF tank integration",
+    "First fill of oil and coolant"
+  ]
+      },
+      {
+        id: 11,
         name: "380 - 500 kVA Generator",
         image: "/generators/img9.jpeg",
         description: "Heavy-duty generator supporting major infrastructure needs.",
@@ -268,94 +307,7 @@ export const serviceCategories = [
     "Weatherproof acoustic enclosure"
   ]
       },
-      {
-        id: 11,
-        name: "650 - 750 kVA Generator",
-        image: "/generators/img10.jpeg",
-        description: "Massive power solution for mission-critical applications.",
-        specs: [
-          "Power Rating: 650 to 750 kVA (520 to 600 kWe)",
-          "Voltage: 415V, 50 Hz | 3 Phase",
-          "Engine: Cummins QSK19-G30 – 6 Cylinder, Inline, 4-Stroke",
-          "Alternator: Stamford HCI554F (650kVA) / HCI634W (750kVA), Brushless",
-          "Cooling: Liquid Cooled (EG Compleat 50:50)",
-          "Aspiration: Turbocharged, Charge Air Cooled",
-          "Fuel: High-Speed Diesel",
-          "Noise Level: ≤ 75 dBA @ 1m at 75% load",
-          "DEF Capacity: 139 litres | Fuel Tank Capacity: 990 litres"
-        ],
-        details: `This 1-phase generator is designed for homes and small businesses, 
-        providing a stable power supply even in fluctuating conditions. 
-        It features advanced fuel efficiency, low noise levels, and a compact 
-        design, making it easy to install and maintain.`,
-        about: "The Cummins QSK19 Series diesel generator set delivers robust high-capacity power designed for critical industrial and commercial applications. Engineered with a 6-cylinder inline configuration and turbocharged aspiration, this CPCB IV+ compliant system offers unmatched reliability, efficiency, and ease of operation. Integrated with Cummins’ trusted engine, alternator, and control technologies, it ensures single-source power assurance with industry-leading performance.",
-  benefits: [
-    "CPCB IV+ compliant for environmentally responsible operation",
-    "High efficiency and reliable performance under varying loads",
-    "Extended service life with heavy-duty components",
-    "Single-source support from Cummins for engine, alternator, and controls",
-    "Low total cost of ownership with optimal fuel economy",
-    "Comprehensive warranty including rubber components"
-  ],
-  useCases: [
-    "Large commercial complexes and industrial plants",
-    "Telecom hubs and mission-critical infrastructure",
-    "Hospitals and large healthcare facilities",
-    "Institutional campuses and government facilities",
-    "Construction, mining, and remote operations"
-  ],
-  included: [
-    "Critical grade silencer",
-    "Weatherproof acoustic enclosure with inside bolt design",
-    "First fill of high-performance oil (CK4) and coolant",
-    "Base frame with integrated 990-litre fuel tank",
-    "Optional remote monitoring system",
-    "DEF tank with 139-litre capacity",
-    "Heavy-duty Cummins® QSK19-G30 engine",
-    "STAMFORD alternator (HCI554F for 650kVA / HCI634W for 750kVA)",
-    "Turbocharged, charge air cooled design",
-    "Compliance with ISO 8528, ISO 3046, ISO 9001 standards"
-  ]
-      },
-      {
-        id: 12,
-        name: "320 kVA Generator",
-        image: "/generators/img8.webp",
-        description: "Industrial grade generator with strong reliability.",
-        specs: [
-          "Power Rating: 320 kVA (256 kWe)",
-          "Voltage: 415V, 50 Hz | 3 Phase",
-          "Engine: Cummins QSL9 – 6 Cylinder, Inline, 4-Stroke",
-          "Alternator: Stamford HCI444D, Brushless",
-          "Cooling: Liquid Cooled Radiator System",
-          "Aspiration: Turbocharged & Charge Air Cooled",
-          "Fuel: High-Speed Diesel with AUS32 (DEF)",
-          "Noise Level: ≤ 75 dBA @ 1m at 75% load"
-        ],
-        details: `The Cummins QSK19 Series 650–750 kVA diesel generator delivers high-capacity, CPCB IV+ compliant power with robust efficiency and reliability. Ideal for critical operations, it features a turbocharged engine, brushless alternator, and integrated fuel and DEF systems. Backed by Cummins’ single-source support and a comprehensive warranty for peace of mind.`,
-        about: "The Cummins QSL9 Series generator is a robust solution featuring an advanced electronic fuel system and high-output Stamford alternator. Designed for continuous operation under demanding conditions, this 6-cylinder unit integrates all core components from Cummins to ensure power consistency and serviceability.",
-  benefits: [
-    "Meets CPCB IV+ norms with exhaust after-treatment",
-    "Compact size with superior power-to-weight ratio",
-    "500 hours/1-year service interval",
-    "Reliable single-source package from Cummins",
-    "Proven efficiency and fuel economy"
-  ],
-  useCases: [
-    "Commercial and residential complexes",
-    "Light industrial units",
-    "Healthcare and labs",
-    "Institutional campuses",
-    "Urban infrastructure projects"
-  ],
-  included: [
-    "Hospital-grade silencer",
-    "Weatherproof acoustic enclosure",
-    "Remote monitoring support",
-    "Fuel and DEF tank integration",
-    "First fill of oil and coolant"
-  ]
-      }
+      
     ]
   },
   {

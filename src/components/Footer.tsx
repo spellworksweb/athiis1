@@ -9,7 +9,7 @@ function Footer() {
           {/* Company Info */}
           <div className="text-center md:text-left">
             <img src="/logo.png" alt="Company Logo" className="h-8 w-10 mx-auto md:mx-0" />
-            <span className="text-[#96C93C] text-xl font-bold block mt-2">AHTIS CORP</span>
+            <span className="text-[#96C93C] text-xl font-bold block mt-2">ATHIS CORP</span>
             <p className="text-gray-400 text-sm mt-2">
               Your trusted partner in energy and generator excellence.
             </p>
