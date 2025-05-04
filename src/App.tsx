@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
@@ -11,7 +11,7 @@ import Services from './pages/Services';
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
       <Navbar />
       <ScrollToTop />
       <Routes>
@@ -23,7 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </div>
   );
 }
 
