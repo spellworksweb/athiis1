@@ -13,6 +13,18 @@ const clients = [
   { name: "GitHub", logo: "/clients/logo10.png" },
   { name: "Dropbox", logo: "/clients/logo11.png" },
   { name: "GitHub", logo: "/clients/logo12.png" },
+  { name: "GitHub", logo: "/clients/logo13.png" },
+  { name: "Cloud", logo: "/clients/logo14.png" },
+  { name: "NY Times", logo: "/clients/logo15.png" },
+  { name: "Zoom", logo: "/clients/logo16.png" },
+  { name: "Coinbase", logo: "/clients/logo17.png" },
+  { name: "GitHub", logo: "/clients/logo18.png" },
+  { name: "Dropbox", logo: "/clients/logo19.png" },
+  { name: "GitHub", logo: "/clients/logo20.png" },
+  { name: "Dropbox", logo: "/clients/logo21.png" },
+  
+
+  { name: "GitHub", logo: "/clients/logo24.png" },
 ];
 
 const ClientsPage: React.FC = () => {
